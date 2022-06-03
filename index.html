@@ -4,7 +4,7 @@
     <title>Taylor Hughes</title>
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=750, initial-scale=1">
+    <meta name="viewport" content="width=650, initial-scale=1">
 
     <style>
         html, body {
@@ -68,13 +68,13 @@
             content: "";
             display: block;
             width: 240px;
-            height: 36px;
+            height: 39px;
             border-bottom-left-radius: 18px;
             border-bottom-right-radius: 18px;
             background: #333;
 
             position: absolute;
-            top: -2px;
+            top: -5px;
             left: 50%;
             margin-left: -120px;
             z-index: 1;
@@ -180,23 +180,6 @@
                 })();
             </script>
         </p>
-
-        <!-- Really? What am I doing with my life -->
-        <div id="emoji">
-            😬 🤔 🤣 😎 😱 😅 🥴
-            😬 🤔 🤣 😎 😱 😅 🥴
-            😬 🤔 🤣 😎 😱 😅 🥴
-            😬 🤔 🤣 😎 😱 😅 🥴
-            😬 🤔 🤣 😎 😱 😅 🥴
-            😬 🤔 🤣 😎 😱 😅 🥴
-            😬 🤔 🤣 😎 😱 😅 🥴
-            😬 🤔 🤣 😎 😱 😅 🥴
-            😬 🤔 🤣 😎 😱 😅 🥴
-            😬 🤔 🤣 😎 😱 😅 🥴
-            😬 🤔 🤣 😎 😱 😅 🥴
-            😬 🤔 🤣 😎 😱 😅 🥴
-            😬 🤔 🤣 😎 😱 😅 🥴
-        </div>
     </section>
 
     <script>
@@ -226,6 +209,13 @@
             };
             updateTime();
             setInterval(updateTime, 1000);
+
+            const emoji = document.createElement('emoji');
+            emoji.id = 'emoji';
+            section.appendChild(emoji);
+            for (let i = 0; i < 50; i++) {
+                emoji.textContent += '😬 🤔 🤣 😎 😱 😅 🥴 ';
+            }
         })();
     </script>
 </body>
