@@ -179,6 +179,7 @@
             </script>
         </p>
 
+        <!-- Really? What am I doing with my life -->
         <div id="emoji">
             😬 🤔 🤣 😎 😱 😅 🥴
             😬 🤔 🤣 😎 😱 😅 🥴
@@ -202,7 +203,7 @@
                 const R = Math.floor(Math.random() * 256);
                 const G = (R + 96) % 256;
                 const B = (G + 96) % 256;
-                return `rgba(${R}, ${G}, ${B}, 0.2)`;
+                return `rgba(${R}, ${G}, ${B}, 0.3)`;
             };
             function setBackgroundGradient() {
                 const gradient = `linear-gradient(45deg, ${Array.from(arguments).join(', ')})`;
