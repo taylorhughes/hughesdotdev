@@ -60,8 +60,6 @@
             flex-direction: column;
             justify-content: center;
             align-items: left;
-
-            overflow: hidden;
         }
 
         section > h1::before {
@@ -131,6 +129,17 @@
             border-bottom-color: rgba(0, 146, 244, 1.0);
         }
 
+        #phone-nonsense {
+            position: absolute;
+            display: block;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            overflow: hidden;
+            z-index: 0;
+            border-radius: 70px;
+        }
         #time {
             position: absolute;
             display: block;
@@ -180,6 +189,7 @@
                 })();
             </script>
         </p>
+        <div id="phone-nonsense"></div>
     </section>
 
     <script>
@@ -197,11 +207,13 @@
 
             setBackgroundGradient(randomRgba(), randomRgba(), randomRgba(), randomRgba());
 
-            // Create the silly clock in the top-left corner.
-            const section = document.getElementsByTagName('section')[0];
+            // Nonsense stuff:
+            const nonsense = document.getElementById('phone-nonsense');
+
+            // Create the silly clock in the top-left corner:
             const time = document.createElement('span');
             time.id = 'time';
-            section.appendChild(time);
+            nonsense.appendChild(time);
             const updateTime = () => {
                 const now = new Date();
                 const minutes = now.getMinutes();
@@ -210,9 +222,10 @@
             updateTime();
             setInterval(updateTime, 1000);
 
+            // Create the ridiculous emoji background:
             const emoji = document.createElement('emoji');
             emoji.id = 'emoji';
-            section.appendChild(emoji);
+            nonsense.appendChild(emoji);
             for (let i = 0; i < 50; i++) {
                 emoji.textContent += '😬 🤔 🤣 😎 😱 😅 🥴 ';
             }
